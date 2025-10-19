@@ -174,9 +174,9 @@ const Footer = () => {
       </div>
       
       {/* Keeping your large background text aesthetic, but adjusting position/style for the new layout */}
-      <h1 className='absolute text-[21vw] bottom-0 left-1/2 transform -translate-x-1/2 font-extrabold opacity-[0.02] pointer-events-none' style={{color: 'white'}}>
+      {/* <h1 className='absolute text-[21vw] bottom-0 left-1/2 transform -translate-x-1/2 font-extrabold opacity-[0.02] pointer-events-none' style={{color: 'white'}}>
         CC.STUDIO
-      </h1>
+      </h1> */}
     </footer>
   );
 }
