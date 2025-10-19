@@ -1,0 +1,15 @@
+
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.font-bricolage{
+     font-family: "Bricolage Grotesque";
+}
+.Quicksand{
+    font-family: "Quicksand";
+}
+#navbutton:hover #arrow {
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+}
