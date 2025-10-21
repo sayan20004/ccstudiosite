@@ -1,6 +1,6 @@
 // api/send-callback-email.js
 
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // ⚠️ IMPORTANT: These credentials MUST be set securely as Vercel Environment Variables.
 // Never hardcode sensitive values directly in this file.
