@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import '../Utils.css';
 
+
 const Modal = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     datetime: '',
-    enquiry: 'Online Courses (Website)',
+    enquiry: 'Social Mdeia Mng.',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -61,7 +62,7 @@ const Modal = ({ onClose }) => {
 
           <label htmlFor="phone" className='input-label'>Phone</label>
           <div className='phone-input-container'>
-              <span className='country-code'>🇮🇳 ▼</span>
+              <span className='country-code'>🇮🇳 </span>
               <input type="tel" id="phone" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
           </div>
 
@@ -70,7 +71,7 @@ const Modal = ({ onClose }) => {
 
           <label htmlFor="enquiry" className='input-label'>Enquiry For 🗓️</label>
           <select id="enquiry" name="enquiry" value={formData.enquiry} onChange={handleChange} required>
-            <option value="Online Courses (Website)">Online Courses (Website)</option>
+            <option value="Social Media Mng.">Social Media Mng.</option>
             <option value="Custom Project Enquiry">Custom Project Enquiry</option>
             <option value="General Question">General Question</option>
           </select>
