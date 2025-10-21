@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../Utils.css'; // Make sure this path is correct
-import Modal from './Modal'; // Assuming Modal.jsx is in the same directory
+import '../Utils.css';
+import Modal from './Modal'; // Import the Modal component
 
 const Navbar = () => {
   // State for the radial ripple hover effect
@@ -16,7 +16,6 @@ const Navbar = () => {
   // --- Ripple Handlers ---
   const handleMouseEnter = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    // Calculate the position (x, y) relative to the button
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
@@ -57,32 +56,30 @@ const Navbar = () => {
 
         <div className="right">
             <button
-                // New classes: custom-ripple-button, relative, overflow-hidden
                 className='custom-ripple-button px-4 py-1 md:px-6 md:py-2 border border-amber-600 rounded-2xl text-amber-600 cursor-pointer text-sm md:text-base bg-transparent transition-colors duration-300 relative overflow-hidden z-10'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={handleBookCallClick} // Open the modal on click
+                onClick={handleBookCallClick}
             >
-                {/* 1. Ripple Effect Span */}
+                {/* Ripple Effect Span */}
                 <span
                     className='ripple-effect'
                     style={{
                         left: hoverData.x,
                         top: hoverData.y,
-                        // Scale up when hovered, scale down when not
                         transform: hoverData.isHovered ? 'scale(5)' : 'scale(0)',
                         opacity: hoverData.isHovered ? 1 : 0,
                     }}
                 />
 
-                {/* 2. Button Text Span (must be above ripple) */}
+                {/* Button Text Span */}
                 <span className="button-text relative z-20 transition-colors duration-300">
                     Book a call
                 </span>
             </button>
         </div>
 
-        {/* 3. Conditional Modal Rendering */}
+        {/* Conditional Modal Rendering */}
         {isModalOpen && <Modal onClose={handleCloseModal} />}
 
     </div>
