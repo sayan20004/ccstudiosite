@@ -53,7 +53,7 @@ export default async (req, res) => {
                             <tr>
                                 <td style="background-color: #C1B5E8; color: #333333; font-size: 16px; padding: 20px 0;">
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0" 
-                                    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect width="5" height="5" fill="#E8DFFF"/><rect x="5" y="5" width="5" height="5" fill="#E8DFFF"/><rect x="5" width="5" height="5" fill="#A499C0"/><rect y="5" width="5" height="5" fill="#A499C0"/></svg>') background-size: 10px 10px; padding: 20px 0;">
+                                    style="background-size: 10px 10px; padding: 20px 0;">
                                         <tr>
                                             <td align="center">
                                                 <h1 style="font-size: 30px; color: #FFFFFF; margin: 0; padding: 10px; background-color: #555555; display: inline-block; border-radius: 6px; font-family: 'Arial Black', Gadget, sans-serif;">
