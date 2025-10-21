@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import '../Utils.css'
-import sayanImg from '../../assets/img/prototype.png';
+import card1 from '../../assets/img/prototype.png';
 import card2 from '../../assets/img/webapp.png';
 import card3 from '../../assets/img/brand.png';
 import card4 from '../../assets/img/social.png';
@@ -14,7 +14,7 @@ const RightPart = () => {
       
       <div className='flex gap-4 overflow-x-scroll hide-scrollbar pb-4'>
         <Card
-        img={sayanImg}
+        img={card1}
         title="Product Prototyping & Dev."
         desc="Discovery to Launch. Build market-ready digital ventures (MVPs)."
         />

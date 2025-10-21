@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import Card from './Card' // Note: This Card component is not used here, but imported
 import createad from '../../assets/img/createads.png'
 import Pricing from '../../assets/img/pricing.png'
 import connection from '../../assets/img/connection.png'
@@ -8,6 +8,7 @@ import quality from '../../assets/img/quality.png'
 
 
 const cards = [
+  // ... (Your card data remains the same)
   {
     type: "image",
     image: createad,
@@ -61,10 +62,13 @@ const AfterMiddleSection = () => {
     
   return (
   
-    <div className="min-h-screen px-4 sm:px-10 py-10 md:py-20 flex justify-center">
+    <div className="px-4 sm:px-10 py-10 md:py-20 flex justify-center">
       
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl w-full auto-rows-fr">
+      {/* GAP REDUCED: Changed 'gap-6' to 'gap-4'
+        Tailwind gap scale: 1 = 0.25rem (4px), 4 = 1rem (16px), 6 = 1.5rem (24px)
+      */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl w-full auto-rows-fr">
         {cards.map((card, i) => (
           <div
             key={i}
@@ -99,7 +103,7 @@ const AfterMiddleSection = () => {
                   Know More{" "}
                   <span className="text-white bg-black rounded-full w-7 h-7 flex items-center justify-center hover:-rotate-45 duration-500 ease-in-out cursor-pointer">
                     →
-                  </span>
+                  </span    >
                 </button>
               </>
             )}

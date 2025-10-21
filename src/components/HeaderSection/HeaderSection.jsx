@@ -4,10 +4,10 @@ import Header from './Header'
 
 const HeaderSection = () => {
   return (
-    <div className='h-screen w-full bg-black text-gray-400'>
+    <div className='h-[80vh] md:h-screen w-full bg-black text-gray-400'>
       <Navbar />
       <Header/>
-    </div>
+</div>
   )
 }
 
