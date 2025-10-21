@@ -1,8 +1,8 @@
 // api/send-callback-email.js
 
-import nodemailer from 'nodemailer'; // ✅ ESM Import
+import nodemailer from 'nodemailer'; 
 
-// --- SECURITY AND CONSTANTS (NO CHANGES HERE) ---
+// --- SECURITY AND CONSTANTS ---
 const SENDER_EMAIL = process.env.EMAIL_USER; 
 const SENDER_PASSWORD = process.env.EMAIL_PASS;
 const RECEIVING_EMAIL = 'connect.chetnastudio@gmail.com'; 
@@ -30,7 +30,6 @@ export default async (req, res) => {
 
     let readableDateTime;
     try {
-        // Ensuring the date is localized for clarity
         readableDateTime = new Date(datetime).toLocaleString('en-IN', {
             year: 'numeric', month: 'short', day: '2-digit',
             hour: '2-digit', minute: '2-digit', hour12: true,
@@ -40,15 +39,10 @@ export default async (req, res) => {
         readableDateTime = 'Not specified or invalid format';
     }
 
-    // 2. Define the CUSTOM email content (The HTML has been updated)
     let mailOptions = {
       from: SENDER_EMAIL,
       to: RECEIVING_EMAIL,
       subject: `New Callback Request from CC.STUDIO: ${enquiry}`,
-      // --------------------------------------------------------------------------------
-      // CUSTOM HTML START
-      // NOTE: Inline CSS is necessary for maximum email client compatibility
-      // --------------------------------------------------------------------------------
       html: `
         <div style="font-family: Arial, sans-serif; background-color: #333333; padding: 20px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -58,7 +52,8 @@ export default async (req, res) => {
                             
                             <tr>
                                 <td style="background-color: #C1B5E8; color: #333333; font-size: 16px; padding: 20px 0;">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect width="5" height="5" fill="#E8DFFF"/><rect x="5" y="5" width="5" height="5" fill="#E8DFFF"/><rect x="5" width="5" height="5" fill="#A499C0"/><rect y="5" width="5" height="5" fill="#A499C0"/></svg>'); background-size: 10px 10px; padding: 20px 0;">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" 
+                                    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><rect width="5" height="5" fill="#E8DFFF"/><rect x="5" y="5" width="5" height="5" fill="#E8DFFF"/><rect x="5" width="5" height="5" fill="#A499C0"/><rect y="5" width="5" height="5" fill="#A499C0"/></svg>'); background-size: 10px 10px; padding: 20px 0;">
                                         <tr>
                                             <td align="center">
                                                 <h1 style="font-size: 30px; color: #FFFFFF; margin: 0; padding: 10px; background-color: #555555; display: inline-block; border-radius: 6px; font-family: 'Arial Black', Gadget, sans-serif;">
@@ -104,12 +99,9 @@ export default async (req, res) => {
             </table>
         </div>
       `,
-      // --------------------------------------------------------------------------------
-      // CUSTOM HTML END
-      // --------------------------------------------------------------------------------
     };
 
-    // Helper function to create the colorful blocks (Must be defined inside the API function)
+    // Helper function to create the colorful blocks 
     function generateDataBlock(label, value, bgColor) {
         return `
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 15px;">
