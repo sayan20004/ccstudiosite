@@ -15,8 +15,8 @@ const Header = () => {
   };
 
   return (
-    <div className='text-white mt-10 md:mt-15 px-4'> 
-        <h1 className='text-5xl sm:text-6xl md:text-8xl text-center font-bricolage'>
+    <div className='text-white px-4'> 
+        <h1 className='text-5xl sm:text-6xl md:text-8xl text-center font-bricolage py-10'>
             Strategy, <br /> Design, <br /> and Digital Growth.
         </h1>
         <div className='flex justify-center'>

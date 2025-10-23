@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // NEW: Import Link
 import '../Utils.css';
-import Modal from './Modal'; // Import the Modal component
+import Modal from './Modal'; 
 
 const Navbar = () => {
-  // State for the radial ripple hover effect
   const [hoverData, setHoverData] = useState({
     isHovered: false,
     x: 0,
     y: 0,
   });
 
-  // State to control the visibility of the callback modal
   const [isModalOpen, setIsModalOpen] = useState(false); 
 
   // --- Ripple Handlers ---
@@ -42,16 +41,19 @@ const Navbar = () => {
   // ----------------------
 
   return (
-    <div className='flex justify-between p-5 md:py-5 md:px-20 Quicksand lowercase'>
+    // Added sticky position, backdrop blur, and z-index to ensure Navbar is always visible
+    <div className='sticky top-0 z-40 flex justify-between p-5 md:py-5 md:px-20 Quicksand lowercase bg-black backdrop-blur-sm text-gray-400'>
 
         <div className="left hidden md:flex justify-between gap-6">
-            <a href="#">cc.Services</a>
-            <a href="#">cc.Works</a>
-            <a href="#">cc.Contact</a>
+            {/* UPDATED to use Link components for routing */}
+            <Link to="/services">cc.Services</Link>
+            <Link to="/works">cc.Works</Link>
+            <Link to="/contact">cc.Contact</Link>
         </div>
 
         <div className="middle font-bricolage text-2xl md:text-3xl text-lime-400">
-            <h3>CC.STUDIO</h3>
+            {/* Logo links back to home */}
+            <Link to="/"><h3>CC.STUDIO</h3></Link>
         </div>
 
         <div className="right">
